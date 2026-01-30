@@ -1,0 +1,46 @@
+name: Notify Consumer Repos
+
+on:
+  # Trigger on new releases
+  release:
+    types: [published]
+  
+  # Trigger on new tags
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Get version from tag
+        id: version
+        run: |
+          if [ "${{ github.event_name }}" = "release" ]; then
+            echo "version=${{ github.event.release.tag_name }}" >> $GITHUB_OUTPUT
+          else
+            echo "version=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Trigger Design-System-SwiftUI sync
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.CONSUMER_REPO_TOKEN }}
+          repository: GobiRajeshKumar/Design-System-SwiftUI
+          event-type: tokens-updated
+          client-payload: '{"version": "${{ steps.version.outputs.version }}", "source": "design-tokens"}'
+
+      # Add more consumer repos here as needed
+      # - name: Trigger Design-System-Android sync
+      #   uses: peter-evans/repository-dispatch@v3
+      #   with:
+      #     token: ${{ secrets.CONSUMER_REPO_TOKEN }}
+      #     repository: GobiRajeshKumar/Design-System-Android
+      #     event-type: tokens-updated
+      #     client-payload: '{"version": "${{ steps.version.outputs.version }}"}'
+
+      - name: Log notification
+        run: |
+          echo "✅ Notified consumer repositories about version ${{ steps.version.outputs.version }}"
