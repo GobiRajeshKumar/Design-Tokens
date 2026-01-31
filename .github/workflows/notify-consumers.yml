@@ -1,14 +1,9 @@
 name: Notify Consumer Repos
 
 on:
-  # Trigger on new releases
+  # Trigger only on new releases
   release:
     types: [published]
-  
-  # Trigger on new tags
-  push:
-    tags:
-      - 'v*'
 
 jobs:
   notify:
