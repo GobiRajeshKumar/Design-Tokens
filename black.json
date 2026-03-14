@@ -1,0 +1,108 @@
+{
+    "light": {
+        "colors": {
+            "text": {
+                "primary": { "value": "#1C1C1C", "type": "color" },
+                "secondary": { "value": "#6E6E6E", "type": "color" },
+                "tertiary": { "value": "#A0A0A0", "type": "color" },
+                "accent": { "value": "#111111", "type": "color" },
+                "critical": { "value": "#B01C1C", "type": "color" },
+                "disabled": { "value": "#111111", "type": "color" },
+                "onPrimary": { "value": "#FFFFFF", "type": "color" },
+                "onPrimaryDisabled": { "value": "#111111", "type": "color" },
+                "inverse": { "value": "#FFFFFF", "type": "color" },
+                "inverseSecondary": { "value": "#FFFFFF", "type": "color" },
+                "inverseCaution": { "value": "#FDB022", "type": "color" },
+                "inversePositive": { "value": "#12B76A", "type": "color" },
+                "inverseCritical": { "value": "#F04438", "type": "color" },
+                "inverseAccent": { "value": "#528BFF", "type": "color" },
+                "link": { "value": "#111111", "type": "color" },
+                "linkPressed": { "value": "#004299", "type": "color" },
+                "criticalOnPrimary": { "value": "#FFFFFF", "type": "color" },
+                "criticalSecondary": { "value": "#D92D20", "type": "color" },
+                "positiveHover": { "value": "#039855", "type": "color" }
+            },
+            "background": {
+                "neutral": { "value": "#FFFFFF", "type": "color" },
+                "accent": { "value": "#111111", "type": "color" },
+                "critical": { "value": "#C44C44", "type": "color" },
+                "accentPressed": { "value": "#999999", "type": "color" },
+                "criticalPressed": { "value": "#841515", "type": "color" },
+                "neutralPressed": { "value": "#D9D9D9", "type": "color" },
+                "inversePressed": { "value": "#707070", "type": "color" },
+                "criticalSecondaryPressed": { "value": "#F8D3D3", "type": "color" },
+                "neutralDisabled": { "value": "#F5F5F5", "type": "color" }
+            },
+            "border": {
+                "primary": { "value": "#111111", "type": "color" },
+                "secondary": { "value": "#DBDBDB", "type": "color" },
+                "accent": { "value": "#111111", "type": "color" },
+                "critical": { "value": "#C44C44", "type": "color" }
+            },
+            "icon": {
+                "primary": { "value": "#1C1C1C", "type": "color" },
+                "secondary": { "value": "#6E6E6E", "type": "color" },
+                "tertiary": { "value": "#A0A0A0", "type": "color" },
+                "accent": { "value": "#111111", "type": "color" },
+                "critical": { "value": "#D92D20", "type": "color" },
+                "onPrimary": { "value": "#111111", "type": "color" },
+                "criticalOnPrimary": { "value": "#FFFFFF", "type": "color" },
+                "positiveHover": { "value": "#039855", "type": "color" },
+                "inverse": { "value": "#FFFFFF", "type": "color" }
+            }
+        }
+    },
+    "dark": {
+        "colors": {
+            "text": {
+                "primary": { "value": "#EEEEEE", "type": "color" },
+                "secondary": { "value": "#949494", "type": "color" },
+                "tertiary": { "value": "#67747E", "type": "color" },
+                "accent": { "value": "#EEEEEE", "type": "color" },
+                "critical": { "value": "#CE6B64", "type": "color" },
+                "disabled": { "value": "#6E6E6E", "type": "color" },
+                "onPrimary": { "value": "#1E1E1E", "type": "color" },
+                "onPrimaryDisabled": { "value": "#1C1C1C99", "type": "color" },
+                "inverse": { "value": "#1A1F23", "type": "color" },
+                "inverseSecondary": { "value": "#1C1C1C99", "type": "color" },
+                "inverseCaution": { "value": "#FDB022", "type": "color" },
+                "inversePositive": { "value": "#12B76A", "type": "color" },
+                "inverseCritical": { "value": "#F04438", "type": "color" },
+                "inverseAccent": { "value": "#528BFF", "type": "color" },
+                "link": { "value": "#528BFF", "type": "color" },
+                "linkPressed": { "value": "#1E40AF", "type": "color" },
+                "criticalOnPrimary": { "value": "#FF8585", "type": "color" },
+                "criticalSecondary": { "value": "#F04438", "type": "color" },
+                "positiveHover": { "value": "#039855", "type": "color" }
+            },
+            "background": {
+                "neutral": { "value": "#1A1A1A", "type": "color" },
+                "accent": { "value": "#EEEEEE", "type": "color" },
+                "critical": { "value": "#C44C44", "type": "color" },
+                "accentPressed": { "value": "#808080", "type": "color" },
+                "criticalPressed": { "value": "#841515", "type": "color" },
+                "neutralPressed": { "value": "#666666", "type": "color" },
+                "inversePressed": { "value": "#B2B2B2", "type": "color" },
+                "criticalSecondaryPressed": { "value": "#6E2121", "type": "color" },
+                "neutralDisabled": { "value": "#F5F5F5", "type": "color" }
+            },
+            "border": {
+                "primary": { "value": "#EEEEEE", "type": "color" },
+                "secondary": { "value": "#3D3D3D", "type": "color" },
+                "accent": { "value": "#EEEEEE", "type": "color" },
+                "critical": { "value": "#CE6B64", "type": "color" }
+            },
+            "icon": {
+                "primary": { "value": "#FFFFFF", "type": "color" },
+                "secondary": { "value": "#A0A0A0", "type": "color" },
+                "tertiary": { "value": "#6E6E6E", "type": "color" },
+                "accent": { "value": "#528BFF", "type": "color" },
+                "critical": { "value": "#F04438", "type": "color" },
+                "onPrimary": { "value": "#1C1C1C", "type": "color" },
+                "criticalOnPrimary": { "value": "#1C1C1C", "type": "color" },
+                "positiveHover": { "value": "#039855", "type": "color" },
+                "inverse": { "value": "#1C1C1C", "type": "color" }
+            }
+        }
+    }
+}

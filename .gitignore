@@ -9,3 +9,14 @@ Thumbs.db
 # Backup files
 *.bak
 *.backup
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Environment
+.env
+.env.*
