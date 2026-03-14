@@ -18,7 +18,7 @@ jobs:
       - name: Trigger Design-System-SwiftUI sync
         uses: peter-evans/repository-dispatch@v3
         with:
-          token: ${{ secrets.CONSUMER_REPO_TOKEN }}
+          token: ${{ secrets.CONSUMER_GITHUB_TOKEN }}
           repository: GobiRajeshKumar/Design-System-SwiftUI
           event-type: tokens-updated
           client-payload: '{"version": "${{ steps.version.outputs.version }}", "source": "design-tokens"}'
@@ -27,7 +27,7 @@ jobs:
       # - name: Trigger Design-System-Android sync
       #   uses: peter-evans/repository-dispatch@v3
       #   with:
-      #     token: ${{ secrets.CONSUMER_REPO_TOKEN }}
+      #     token: ${{ secrets.CONSUMER_GITHUB_TOKEN }}
       #     repository: GobiRajeshKumar/Design-System-Android
       #     event-type: tokens-updated
       #     client-payload: '{"version": "${{ steps.version.outputs.version }}"}'
