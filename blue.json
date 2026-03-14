@@ -5,7 +5,7 @@
                 "primary": { "value": "#1C1C1C", "type": "color" },
                 "secondary": { "value": "#ADD8E6", "type": "color" },
                 "tertiary": { "value": "#A0A0A0", "type": "color" },
-                "accent": { "value": "#0000ff", "type": "color" },
+                "accent": { "value": "#0055FF", "type": "color" },
                 "critical": { "value": "#B01C1C", "type": "color" },
                 "disabled": { "value": "#999999", "type": "color" },
                 "onPrimary": { "value": "#FFFFFF", "type": "color" },
