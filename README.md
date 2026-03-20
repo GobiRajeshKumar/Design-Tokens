@@ -6,8 +6,7 @@ Central repository for design tokens used across platform-specific design system
 
 ```
 design-tokens/
-├── tokens.json          # Main entry point
-├── design-tokens.json   # Same token entry payload
+├── tokens.json           # Main entry point
 ├── global.json          # Shared foundations: spacing, sizing, radius, animation
 ├── setmore.json
 ├── setmore-black.json
@@ -53,50 +52,73 @@ Consumer repos can detect version changes and only regenerate when tokens are up
     "setmore-black": "./setmore-black.json",
     "serviceforge": "./serviceforge.json",
     "answer-connect": "./answer-connect.json"
-  },
+  }
 }
 ```
 
 ### global.json
 
-Contains tokens shared across all brands:
+Contains shared foundation tokens in DTCG-style format using `$value` and `$type`:
 
 ```json
 {
-  "spacing": { "0": "0px", "2": "2px", "...": "..." },
-  "sizing": { "0": "0px", "full": "100%" },
-  "radius": { "none": "0px", "full": "9999px" },
-  "borderWidth": { "regular": "1px", "large": "2px" },
-  "animation": { "duration": {}, "easing": {} }
+  "spacing": {
+    "$type": "dimension",
+    "4": { "$value": "4px" }
+  },
+  "animation": {
+    "duration": {
+      "$type": "duration",
+      "200": { "$value": "200ms" }
+    }
+  }
 }
 ```
 
 ### Brand files
 
-Each brand file contains typography plus light and dark color schemes:
+Each brand file contains typography plus light and dark color schemes in DTCG-style format:
 
 ```json
 {
   "typography": {
-    "fontFamily": {},
-    "fontWeight": {},
-    "heading": {},
-    "body": {}
+    "fontFamily": {
+      "$type": "fontFamily",
+      "heading": { "$value": "Inter" }
+    },
+    "heading": {
+      "16": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{typography.fontFamily.heading}",
+          "fontWeight": "600",
+          "fontSize": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "0px"
+        }
+      }
+    }
   },
   "colorSchemes": {
     "light": {
-      "text": {},
-      "background": {},
-      "border": {},
-      "icon": {}
-    },
-    "dark": {
-      "text": {},
-      "background": {},
-      "border": {},
-      "icon": {}
+      "text": {
+        "$type": "color",
+        "accent": { "$value": "#1d90f5" }
+      },
+      "shadow": {
+        "$type": "shadow",
+        "10": {
+          "$value": {
+            "color": "rgba(0, 0, 0, 0.12)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "4px",
+            "spread": "0px"
+          }
+        }
+      }
     }
-  },
+  }
 }
 ```
 
@@ -104,8 +126,7 @@ Each brand file contains typography plus light and dark color schemes:
 
 1. Create a new `<brand>.json` file with `typography` and `colorSchemes`
 2. Add the brand file path under `brands` in `tokens.json`
-3. Optionally mirror the same entry in `design-tokens.json`
-4. Commit and create a new release/tag
+3. Commit and create a new release/tag
 
 ## Consumer Repositories
 

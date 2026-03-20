@@ -1,9 +1,0 @@
-{
-	"global": "./global.json",
-	"brands": {
-		"setmore": "./setmore.json",
-		"setmore-black": "./setmore-black.json",
-		"serviceforge": "./serviceforge.json",
-		"answer-connect": "./answer-connect.json"
-	}
-}
