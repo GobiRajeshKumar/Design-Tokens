@@ -6,10 +6,13 @@ Central repository for design tokens used across platform-specific design system
 
 ```
 design-tokens/
-├── tokens.json      # Main entry point — references global and brand token files
-├── global.json      # Shared tokens: spacing, typography, borderRadius, shadow
-├── black.json       # Black brand tokens: light and dark color sets
-├── blue.json        # Blue brand tokens: light and dark color sets
+├── tokens.json          # Main entry point
+├── design-tokens.json   # Same token entry payload
+├── global.json          # Shared foundations: spacing, sizing, radius, animation
+├── setmore.json
+├── setmore-black.json
+├── serviceforge.json
+├── answer-connect.json
 └── README.md
 ```
 
@@ -44,16 +47,13 @@ Consumer repos can detect version changes and only regenerate when tokens are up
 
 ```json
 {
-  "$metadata": {
-    "tokenSetOrder": ["global", "light", "dark"],
-    "defaultBrand": "black",
-    "brands": ["black", "blue"]
+  "global": "./global.json",
+  "brands": {
+    "setmore": "./setmore.json",
+    "setmore-black": "./setmore-black.json",
+    "serviceforge": "./serviceforge.json",
+    "answer-connect": "./answer-connect.json"
   },
-  "global": { "$ref": "./global.json" },
-  "brand": {
-    "black": { "$ref": "./black.json" },
-    "blue": { "$ref": "./blue.json" }
-  }
 }
 ```
 
@@ -63,43 +63,48 @@ Contains tokens shared across all brands:
 
 ```json
 {
-  "spacing": { "s2": {}, "s4": {}, ... "s64": {} },
-  "borderRadius": { "small": {}, "medium": {}, "large": {}, "xl": {}, "round": {} },
-  "typography": { "fontFamily": {}, "fontSize": {}, "fontWeight": {}, "heading": {}, "body": {}, "label": {} },
-  "shadow": { "small": {}, "medium": {}, "large": {} }
+  "spacing": { "0": "0px", "2": "2px", "...": "..." },
+  "sizing": { "0": "0px", "full": "100%" },
+  "radius": { "none": "0px", "full": "9999px" },
+  "borderWidth": { "regular": "1px", "large": "2px" },
+  "animation": { "duration": {}, "easing": {} }
 }
 ```
 
-### black.json / blue.json
+### Brand files
 
-Each brand file contains light and dark color sets:
+Each brand file contains typography plus light and dark color schemes:
 
 ```json
 {
-  "light": {
-    "colors": {
+  "typography": {
+    "fontFamily": {},
+    "fontWeight": {},
+    "heading": {},
+    "body": {}
+  },
+  "colorSchemes": {
+    "light": {
+      "text": {},
+      "background": {},
+      "border": {},
+      "icon": {}
+    },
+    "dark": {
       "text": {},
       "background": {},
       "border": {},
       "icon": {}
     }
   },
-  "dark": {
-    "colors": {
-      "text": {},
-      "background": {},
-      "border": {},
-      "icon": {}
-    }
-  }
 }
 ```
 
 ## Adding New Brands
 
-1. Create a new `<brand>.json` file with `light` and `dark` color sets
-2. Add a `$ref` entry under `brand` in `tokens.json`
-3. Add the brand name to `$metadata.brands` in `tokens.json`
+1. Create a new `<brand>.json` file with `typography` and `colorSchemes`
+2. Add the brand file path under `brands` in `tokens.json`
+3. Optionally mirror the same entry in `design-tokens.json`
 4. Commit and create a new release/tag
 
 ## Consumer Repositories
@@ -110,7 +115,7 @@ Each brand file contains light and dark color sets:
 
 ## Contributing
 
-1. Make changes to the relevant token file (`global.json`, `black.json`, or `blue.json`)
+1. Make changes to the relevant token file (`global.json` or one of the brand JSON files)
 2. Test locally with consumer repos
 3. Create a PR
 4. After merge, create a new version tag/release
